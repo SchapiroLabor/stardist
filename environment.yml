@@ -3,6 +3,6 @@ channels:
   - conda-forge
 dependencies:
   - python=3.9  ## specify desired python version
-  - tensorflow
+  - tensorflow-cpu
   - stardist==0.9.1
   - tifffile<2022.4.22
