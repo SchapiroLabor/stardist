@@ -1,0 +1,8 @@
+name: stardist
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9  ## specify desired python version
+  - tensorflow==2.10.0
+  - stardist==0.9.1
+  - tifffile<2022.4.22
