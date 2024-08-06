@@ -2,6 +2,7 @@ name: stardist
 channels:
   - apple
   - conda-forge
+  - nodefaults
 dependencies:
   - python=3.9  ## specify desired version
   - tensorflow-deps==2.10.0
