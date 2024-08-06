@@ -1,5 +1,5 @@
 # Use the official micromamba image as a base
-FROM continuumio/miniconda3:main
+FROM mambaorg/micromamba:latest
 LABEL maintainer="Miguel A. Ibarra-Arellano"
 
 # Set the base layer for micromamba
@@ -14,12 +14,15 @@ RUN apt-get update -qq && apt-get install -y \
     libxext6 \
     procps
 
-# Activate conda
-RUN conda init
+# Set the environment variable for the root prefix
+ARG MAMBA_ROOT_PREFIX=/opt/conda
+
+# Add /opt/conda/bin to the PATH
+ENV PATH $MAMBA_ROOT_PREFIX/bin:$PATH
 
 # Install dependencies with micromamba, clean afterwards
-RUN conda env create -f environment.yml \
-    && conda clean --all --yes
+RUN micromamba env create -f environment.yml \
+    && micromamba clean --all --yes
 
 # Add environment to PATH
 ENV PATH="/opt/conda/envs/stardist/bin:$PATH"
