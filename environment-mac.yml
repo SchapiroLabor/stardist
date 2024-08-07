@@ -6,7 +6,7 @@ channels:
 dependencies:
   - python=3.9  ## specify desired version
   - tensorflow-deps==2.10.0
-  - stardist==0.9.1
+  - stardist=0.9.1=py39haf4370b_0
   - tifffile<2022.4.22
   - pip
   - pip:
